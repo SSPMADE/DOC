@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<script language="JavaScript">
+<!-- //
+
+
+//Simple Calculator Part
+
+//Calculator Section
+lastNumber = 0
+lastOperator = ""
+answerVisible = false
+spaces = " \t\r\n"
+
+
+function removeSpaces(str){  //take out any spaces
+   var ch
+   var i
+   var tempStr = ""
+   for (i=0;i<str.length;i++){
+      ch = str.charAt(i)
+      if (spaces.indexOf(ch) == -1){
+        tempStr += ch
+      }
+   }
+   return tempStr
+}
+
+function isNumber(str){
+   var i 
+   var ch
+   var numCount = 0
+   var dotCount = 0
+   if (str.length <1){
+      return false
+   } 
+   for (i=0;i<str.length;i++){
+      ch = str.charAt(i)
+      if ((ch >= "0") && (ch <= "9")){
+         numCount++
+      }
+      else if (ch == "."){
+         dotCount++
+      }
+      else if ((ch == "-")&&(i == 0)){
+         ;
+      }
+      else {
+         return false
+      }
+   }
+   if (dotCount > 1){
+      return false
+   }
+   return true
+}
+
+function putOperator(op){
+var temp = ""
+   if (op == "C"){
+      document.UserInput.output.value = ""
+      lastNumber = 0
+      lastOperator = "" 
+      answerVisible = false
+      return     
+   }
+   temp = removeSpaces(document.UserInput.output.value)
+
+   if (!isNumber(temp)){
+      document.UserInput.output.value = "Error/Press C"
+      lastNumber = 0
+      lastOperator = "" 
+      answerVisible = false
+      return     
+   }
+   else{
+      document.UserInput.output.value = temp
+   }
+   if (op == "="){
+      if (lastOperator){
+         temp = "" + lastNumber +  lastOperator + "(" + document.UserInput.output.value + ")"
+         temp = eval(temp)
+         document.UserInput.output.value = temp
+         lastNumber = temp
+         lastOperator = ""
+         answerVisible = true
+      }
+      return
+   }
+   if (lastOperator){
+      temp = "" + lastNumber + lastOperator + "(" + document.UserInput.output.value + ')'
+      temp = eval(temp)
+      document.UserInput.output.value = temp
+      lastNumber = temp
+      lastOperator = op
+      answerVisible = true
+   }
+   else{
+      lastNumber = document.UserInput.output.value
+      lastOperator = op
+      answerVisible = true
+   }
+}
+
+function putNumber(n){
+   if (answerVisible){
+      document.UserInput.output.value = n
+      answerVisible = false
+   }
+   else{
+      document.UserInput.output.value = document.UserInput.output.value + n
+      answerVisible = false
+   }
+}
+//End Calculator
+
+
+//-->
+</script>
+</head>
+
+<body onLoad="newGame(false)">
+
+<!-- -->
+<form name="UserInput">
+
+<table>
+<tbody>
+
+<tr>
+<td colspan="4">
+<input size="20" name="output" value="">
+</td>
+</tr>
+
+<tr><td><input type="BUTTON" value="  7  " onClick="putNumber(7)"></td>
+<td><input type="BUTTON" value="  8  " onClick="putNumber(8)"></td>
+<td><input type="BUTTON" value="  9  " onClick="putNumber(9)"></td>
+<td><input type="BUTTON" value="   +  " onClick="putOperator(&#39;+&#39;)"></td>
+</tr><tr>
+<td><input type="BUTTON" value="  4  " onClick="putNumber(4)"></td>
+<td><input type="BUTTON" value="  5  " onClick="putNumber(5)"></td>
+<td><input type="BUTTON" value="  6  " onClick="putNumber(6)"></td>
+<td><input type="BUTTON" value="   -   " onClick="putOperator(&#39;-&#39;)"></td>
+</tr>
+<tr>
+<td><input type="BUTTON" value="  1  " onClick="putNumber(1)"></td>
+<td><input type="BUTTON" value="  2  " onClick="putNumber(2)"></td>
+<td><input type="BUTTON" value="  3  " onClick="putNumber(3)"></td>
+<td><input type="BUTTON" value="   *   " onClick="putOperator(&#39;*&#39;)"></td>
+</tr>
+<tr>
+<td><input type="BUTTON" value="  0  " onClick="putNumber(0)"></td>
+<td><input type="BUTTON" value="  C  " onClick="putOperator(&#39;C&#39;)"></td>
+
+<td><input type="BUTTON" value="  =  " onClick="putOperator(&#39;=&#39;)"></td>
+<td><input type="BUTTON" value="   /   " onClick="putOperator(&#39;/&#39;)"></td>
+</tr>
+
+</tbody>
+</table>
+
+</form>
+
+
+
+<xmp>
+<!DOCTYPE html>
+<html>
+	<head>
+<script language="JavaScript">
+<!-- //
+
+
+//Simple Calculator Part
+
+//Calculator Section
+lastNumber = 0
+lastOperator = ""
+answerVisible = false
+spaces = " \t\r\n"
+
+
+function removeSpaces(str){  //take out any spaces
+   var ch
+   var i
+   var tempStr = ""
+   for (i=0;i<str.length;i++){
+      ch = str.charAt(i)
+      if (spaces.indexOf(ch) == -1){
+        tempStr += ch
+      }
+   }
+   return tempStr
+}
+
+function isNumber(str){
+   var i 
+   var ch
+   var numCount = 0
+   var dotCount = 0
+   if (str.length <1){
+      return false
+   } 
+   for (i=0;i<str.length;i++){
+      ch = str.charAt(i)
+      if ((ch >= "0") && (ch <= "9")){
+         numCount++
+      }
+      else if (ch == "."){
+         dotCount++
+      }
+      else if ((ch == "-")&&(i == 0)){
+         ;
+      }
+      else {
+         return false
+      }
+   }
+   if (dotCount > 1){
+      return false
+   }
+   return true
+}
+
+function putOperator(op){
+var temp = ""
+   if (op == "C"){
+      document.UserInput.output.value = ""
+      lastNumber = 0
+      lastOperator = "" 
+      answerVisible = false
+      return     
+   }
+   temp = removeSpaces(document.UserInput.output.value)
+
+   if (!isNumber(temp)){
+      document.UserInput.output.value = "Error/Press C"
+      lastNumber = 0
+      lastOperator = "" 
+      answerVisible = false
+      return     
+   }
+   else{
+      document.UserInput.output.value = temp
+   }
+   if (op == "="){
+      if (lastOperator){
+         temp = "" + lastNumber +  lastOperator + "(" + document.UserInput.output.value + ")"
+         temp = eval(temp)
+         document.UserInput.output.value = temp
+         lastNumber = temp
+         lastOperator = ""
+         answerVisible = true
+      }
+      return
+   }
+   if (lastOperator){
+      temp = "" + lastNumber + lastOperator + "(" + document.UserInput.output.value + ')'
+      temp = eval(temp)
+      document.UserInput.output.value = temp
+      lastNumber = temp
+      lastOperator = op
+      answerVisible = true
+   }
+   else{
+      lastNumber = document.UserInput.output.value
+      lastOperator = op
+      answerVisible = true
+   }
+}
+
+function putNumber(n){
+   if (answerVisible){
+      document.UserInput.output.value = n
+      answerVisible = false
+   }
+   else{
+      document.UserInput.output.value = document.UserInput.output.value + n
+      answerVisible = false
+   }
+}
+//End Calculator
+
+
+//-->
+</script>
+</head>
+
+<body onLoad="newGame(false)">
+
+<!-- -->
+<form name="UserInput">
+
+<table>
+<tbody>
+
+<tr>
+<td colspan="4">
+<input size="20" name="output" value="">
+</td>
+</tr>
+
+<tr><td><input type="BUTTON" value="  7  " onClick="putNumber(7)"></td>
+<td><input type="BUTTON" value="  8  " onClick="putNumber(8)"></td>
+<td><input type="BUTTON" value="  9  " onClick="putNumber(9)"></td>
+<td><input type="BUTTON" value="   +  " onClick="putOperator(&#39;+&#39;)"></td>
+</tr><tr>
+<td><input type="BUTTON" value="  4  " onClick="putNumber(4)"></td>
+<td><input type="BUTTON" value="  5  " onClick="putNumber(5)"></td>
+<td><input type="BUTTON" value="  6  " onClick="putNumber(6)"></td>
+<td><input type="BUTTON" value="   -   " onClick="putOperator(&#39;-&#39;)"></td>
+</tr>
+<tr>
+<td><input type="BUTTON" value="  1  " onClick="putNumber(1)"></td>
+<td><input type="BUTTON" value="  2  " onClick="putNumber(2)"></td>
+<td><input type="BUTTON" value="  3  " onClick="putNumber(3)"></td>
+<td><input type="BUTTON" value="   *   " onClick="putOperator(&#39;*&#39;)"></td>
+</tr>
+<tr>
+<td><input type="BUTTON" value="  0  " onClick="putNumber(0)"></td>
+<td><input type="BUTTON" value="  C  " onClick="putOperator(&#39;C&#39;)"></td>
+
+<td><input type="BUTTON" value="  =  " onClick="putOperator(&#39;=&#39;)"></td>
+<td><input type="BUTTON" value="   /   " onClick="putOperator(&#39;/&#39;)"></td>
+</tr>
+
+</tbody>
+</table>
+
+</form>
+
+
+<!-- -->
+
+</body>
+</html>
+</xmp>
+
+
+<!-- -->
+
+</body>
+</html>
