@@ -79,6 +79,7 @@ var list = {
 			[ "3d tour", "manual/SSP001JS/3d-tour"]
 
 	                ]
+		}
 
 };
 
