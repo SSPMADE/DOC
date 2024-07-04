@@ -21,19 +21,7 @@ var list = {
 			[ "Three line icon code", "manual/SSP001HTML/Three-line-icon-code" ],
 			[ "HTML Canvas", "manual/SSP001HTML/HTML-Canvas" ],
 			[ "HTML Video", "manual/SSP001HTML/HTML-Video" ]
-
-			
-			
-			
-		],
-		"CSS3": [
-			[ "image blur effect", "manual/SSP001CSS3/image-blur-effect" ],
-			[ "image grayscale effect", "manual/SSP001CSS3/image-grayscale-effect" ],
-			[ "Animated Button", "manual/SSP001CSS3/Animated-Button" ],
-			[ "Animated Button Ripple Effect", "manual/SSP001CSS3/Animated-Button-Ripple-Effect" ],
-			[ "Animated Buttons Pressed Effect", "manual/SSP001CSS3/Animated-Buttons-Pressed-Effect" ],
-			[ "Appendix 0", "manual/SSP001CSS3/Appendix-0" ]
-		],
+		        ],
 		"JAVA SCRIPT EXAMPLES": [
 			[ "Animated Search Form", "manual/SSP001JS/Animated-Search-Form" ],
 			[ "Accordion", "manual/SSP001JS/Accordion" ],
@@ -72,25 +60,12 @@ var list = {
 			[ "Draw a triangle", "manual/SSP001JS/draw-a-triangle" ],
 			[ "Confirm dialog box", "manual/SSP001JS/Dialog-box-confirm" ],
 			[ "Alart dialog box", "manual/SSP001JS/Dialog-box-alart" ],
-			
-			
-			
-			
-			
-			
-			
 			[ "Canvas Clock", "manual/SSP001JS/Canvas-Clock" ],
 			[ "Canvas Snake Game", "manual/SSP001JS/Canvas-Snake-Game" ],
 			[ "Canvas Game 1", "manual/SSP001JS/Canvas-Game-1" ],
 			[ "Canvas Game 1 keyboad", "manual/SSP001JS/Canvas-Game-1-keyboad" ],
 			[ "Game Pad", "manual/SSP001JS/Game-Pad" ],
-			
 			[ "Geolocation", "manual/SSP001JS/Geolocation" ],
-			
-			
-			
-			
-			
 			[ "Prompt dialog box", "manual/SSP001JS/Dialog-box-prompt" ],
 			[ "Paralax", "manual/SSP001JS/Paralax" ],
 			[ "Drag And Drop", "manual/SSP001JS/Drag-And-Drop" ],
@@ -103,35 +78,7 @@ var list = {
 			[ "3d using threejs loader json blender", "manual/SSP001JS/3d-using-threejs-loader-json-blender"],
 			[ "3d tour", "manual/SSP001JS/3d-tour"]
 
-		],
-		"Flash Action Script": [
-			[ "Flash Player", "manual/SSP001AS/Flash-Action-Script-Media-Player" ]
-		],
-		"Php": [
-			[ "PHP Introduction", "manual/SSP001PHP/PHP-Introduction" ]
-		]
-	},
-	"PYTHON": {
-		"Introduction": [
-			[ "Introduction To Python", "manual/SSP001Python/Introduction-To-Python" ]
-		],
-		"Examples": [
-			[ "SSP text editer", "manual/SSP001Python/SSP-text-editer" ]
-		]
-	},
-	"MACHINE CODE": {
-		"ASM": [
-			[ "Introduction", "manual/SSP001ASM/asm1" ]
-		]
-	},
-	"Other notes": {
-		"Accounting": [
-			[ "Introduction", "manual/SSP001Acc/FINANCIAL-ACCOUNTING" ]
-		],
-		"Security": [
-			[ "Security guard notes", "manual/SSP001SECURITY/Security-guard-notes" ]
-		]
-	}
+	                ]
 
 };
 
