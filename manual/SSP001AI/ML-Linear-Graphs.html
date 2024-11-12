@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ML Examples</title>
+		<link type="text/css" rel="stylesheet" href="../../page.css" />
+	</head>
+
+<body>
+
+<!-- -->
+<h1>Linear Graphs</h1>
+
+Machine Learning often uses line graphs to show relationships.<br><br>
+
+A line graph displays the values of a linear function: y = ax + b<br><br>
+
+Important keywords:<br>
+
+Linear (Straight)<br>
+Slope (Angle)<br>
+Intercept (Start value)<br>
+Linear<br>
+Linear means straight. A linear graph is a straight line.<br>
+
+The graph consists of two axes: x-axis (horizontal) and y-axis (vertical).<br>
+
+Example<br>
+<xmp>
+<!DOCTYPE html>
+<html>
+<script src="plotly-latest.min.js"></script>
+<body>
+
+<div id="myPlot3" style="width:100%;max-width:700px"></div>
+
+<script>
+const xValues = [];
+const yValues = [];
+
+// Generate values
+for (let x = 0; x <= 10; x += 1) {
+  xValues.push(x);
+  yValues.push(x);
+}
+
+// Define Data
+const data = [{
+  x: xValues,
+  y: yValues,
+  mode: "lines"
+}];
+
+// Define Layout
+const layout = {title: "y = x"};
+
+// Display using Plotly
+Plotly.newPlot("myPlot3", data, layout);
+</script>
+
+</body>
+</html>
+</xmp>
+Live demo<br>
+<iframe src="ML-Linear-GraphsEg0.html" style="position: relative;border: 0px;left: 0px;width: 100%;height: 500px;overflow: auto;"></iframe>
+<br><a href="ML-Linear-GraphsEg0.html">View Example</a><br>
+Slope<br>
+The slope is the angle of the graph.<br>
+
+The slope is the a value in a linear graph:<br>
+
+y = ax<br>
+
+In this example, slope = 1.2:<br>
+
+Example<br>
+<xmp>
+let slope = 1.2;
+const xValues = [];
+const yValues = [];
+
+// Generate values
+for (let x = 0; x <= 10; x += 1) {
+  xValues.push(x);
+  yValues.push(x * slope);
+}
+
+// Define Data
+const data = [{
+  x: xValues,
+  y: yValues,
+  mode: "lines"
+}];
+// Define Layout
+const layout = {title: "Slope=" + slope};
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+</xmp>
+Try it Yourself »<br>
+Intercept<br>
+The Intercept is the start value of the graph.<br>
+
+The intercept is the b value in a linear graph:<br>
+
+y = ax + b<br>
+
+In this example, slope = 1.2 and intercept = 7:<br>
+
+Example<br>
+<xmp>
+<!DOCTYPE html>
+<html>
+<script src="plotly-latest.min.js"></script>
+<body>
+
+<div id="myPlot4" style="width:100%;max-width:700px"></div>
+
+<script>
+let slope = 1.2;
+let intercept = 7;
+const xValues = [];
+const yValues = [];
+
+// Generate values
+for (let x = 0; x <= 10; x += 1) {
+  xValues.push(x);
+  yValues.push(x * slope + intercept);
+}
+
+// Define Data
+const data = [{
+  x: xValues,
+  y: yValues,
+  mode: "lines"
+}];
+
+// Define Layout
+const layout = {title: "Slope=" + slope + " Intercept=" + intercept};
+
+// Display using Plotly
+Plotly.newPlot("myPlot4", data, layout);
+</script>
+
+</body>
+</html>
+</xmp>
+Live demo<br>
+<iframe src="ML-Linear-GraphsEg1.html" style="position: relative;border: 0px;left: 0px;width: 100%;height: 500px;overflow: auto;"></iframe>
+<br><a href="ML-Linear-GraphsEg1.html">View Example</a><br>
+<!-- -->
+
+
+</body>
+</html>

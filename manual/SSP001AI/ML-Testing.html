@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ML Examples</title>
+		<link type="text/css" rel="stylesheet" href="../../page.css" />
+	</head>
+
+<body>
+
+<!-- -->
+<h1>Testing a Perceptron</h1>
+
+A Perceptron must be Tested and Evaluated.<br>
+
+A Perceptron must be tested against Real Values.<br>
+
+Test Your Library<br>
+Generate new unknown points and check if your Perceptron can guess the right answers:<br>
+
+Example
+<xmp>
+// Test Against Unknown Data
+const counter = 500;
+for (let i = 0; i < counter; i++) {
+  let x = Math.random() * xMax;
+  let y = Math.random() * yMax;
+  let guess = ptron.activate([x, y, ptron.bias]);
+  let color = "black";
+  if (guess == 0) color = "blue";
+  plotter.plotPoint(x, y, color);
+}
+</xmp>
+Try it Yourself »<br>
+
+Count the Errors<br>
+Add a counter to count the number of errors:<br>
+
+Example
+<xmp>
+// Test Against Unknown Data
+const counter = 500;
+let errors = 0;
+for (let i = 0; i < counter; i++) {
+  let x = Math.random() * xMax;
+  let y = Math.random() * yMax;
+  let guess = ptron.activate([x, y, ptron.bias]);
+  let color = "black";
+  if (guess == 0) color = "blue";
+  plotter.plotPoint(x, y, color);
+  if ((y > f(x) && guess == 0) || (y < f(x) && guess == 1)) {errors++}
+}
+</xmp>
+Try it Yourself »<br>
+
+Tune the Perceptron<br>
+How can you tune the Perceptron?<br>
+
+Here are some suggestions:<br>
+
+Adjust the learning rate<br>
+Increase the number of training data<br>
+Increase the number of training iterations<br>
+<!-- -->
+
+
+</body>
+</html>

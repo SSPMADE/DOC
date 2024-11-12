@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ML Examples</title>
+		<link type="text/css" rel="stylesheet" href="../../page.css" />
+	</head>
+
+<body>
+
+<!-- -->
+<h1>Pattern Recognition</h1>
+Neural Networks are used in applications like Facial Recognition.
+
+These applications use Pattern Recognition.<br><br>
+
+This type of Classification can be done with a Perceptron.<br>
+
+Perceptrons can be used to classify data into two parts.
+
+Perceptrons are also known as a Linear Binary Classifiers.<br><br>
+
+Pattern Classification<br>
+Imagine a strait line (a linear graph) in a space with scattered x y points.<br>
+
+How can you classify the points over and under the line?<br>
+
+A perceptron can be trained to recognize the points over the line, without knowing the formula for the line.<br><br>
+
+Perceptron<br>
+
+How to Program a Perceptron<br>
+To program a perceptron, we can use a simple JavaScript program that will:
+                <ul>
+                    <li>Create a simple plotter</li>
+                    <li>Create 500 random x y points</li>
+                    <li>Display the x y points</li>
+                    <li>Create a line function: f(x)</li>
+                    <li>Display the line</li>
+                    <li>Compute the desired answers</li>
+                    <li>Display the desired answers</li>
+                    <li>Create a Simple Plotter</li>
+                </ul>
+Creating a simple plotter object is described in the AI Canvas Chapter.<br><br>
+
+Example
+<xmp>
+const plotter = new XYPlotter("myCanvas");
+plotter.transformXY();
+
+const xMax = plotter.xMax;
+const yMax = plotter.yMax;
+const xMin = plotter.xMin;
+const yMin = plotter.yMin;
+</xmp>
+Create Random X Y Points<br>
+Create as many xy points as wanted.<br>
+
+Let the x values be random (between 0 and maximum).<br>
+
+Let the y values be random (between 0 and maximum).<br>
+
+Display the points in the plotter:<br>
+
+Example
+<xmp>
+const numPoints = 500;
+const xPoints = [];
+const yPoints = [];
+for (let i = 0; i < numPoints; i++) {
+  xPoints[i] = Math.random() * xMax;
+  yPoints[i] = Math.random() * yMax;
+}
+</xmp>
+
+Create a Line Function<br>
+Display the line in the plotter:<br>
+
+Example
+<xmp>
+function f(x) {
+  return x * 1.2 + 50;
+}
+</xmp>
+
+Compute Correct Answers<br>
+Compute the correct answers based on the line function:<br>
+
+y = x * 1.2 + 50.<br>
+
+The desired answer is 1 if y is over the line and 0 if y is under the line.<br>
+
+Store the desired answers in an array (desired[]).<br>
+
+Example
+<xmp>
+let desired = [];
+for (let i = 0; i < numPoints; i++) {
+  desired[i] = 0;
+  if (yPoints[i] > f(xPoints[i])) {desired[i] = 1;}
+}
+</xmp>
+Display the Correct Answers<br>
+For each point, if desired[i] = 1 display a black point, else display a blue point.<br>
+
+Example
+<xmp>
+for (let i = 0; i < numPoints; i++) {
+  let color = "blue";
+  if (desired[i]) color = "black";
+  plotter.plotPoint(xPoints[i], yPoints[i], color);
+}
+</xmp>
+
+Source code:
+<xmp>
+<!DOCTYPE html>
+<html>
+<script src="myplotlib.js"></script>
+
+<body>
+<canvas id="myCanvas" width="400px" height="400px" style="width:100%;max-width:400px;border:1px solid black"></canvas>
+
+<script>
+// Create a Plotter
+const plotter = new XYPlotter("myCanvas");
+plotter.transformXY();
+const xMax = plotter.xMax;
+const yMax = plotter.yMax;
+const xMin = plotter.xMin;
+const yMin = plotter.yMin;
+
+// Create Random XY Points
+const numPoints = 500;
+const xPoints = [];
+const yPoints = [];
+for (let i = 0; i < numPoints; i++) {
+  xPoints[i] = Math.random() * xMax;
+  yPoints[i] = Math.random() * yMax;
+}
+
+// Line Function
+function f(x) {
+  return x * 1.2 + 50;
+}
+
+//Plot the Line
+plotter.plotLine(xMin, f(xMin), xMax, f(xMax), "black");
+
+// Compute Desired Answers
+const desired = [];
+for (let i = 0; i < numPoints; i++) {
+  desired[i] = 0;
+  if (yPoints[i] > f(xPoints[i])) {desired[i] = 1}
+}
+
+// Diplay Desired Result
+for (let i = 0; i < numPoints; i++) {
+  let color = "blue";
+  if (desired[i]) color = "black";
+  plotter.plotPoint(xPoints[i], yPoints[i], color);
+}
+</script>
+</body>
+</html>
+</xmp>
+Live demo<br>
+<iframe src="ML-RecognitionEg.html" style="position: relative;border: 0px;left: 0px;width: 100%;height: 500px;overflow: auto;"></iframe>
+<br><a href="ML-RecognitionEg.html">View Example</a><br>
+
+How to Train a Perceptron<br>
+In the next chapter, you will learn how to use the correct answers to:<br>
+
+Train a perceptron to predict the output values of unknown input values.
+<!-- -->
+
+
+</body>
+</html>
