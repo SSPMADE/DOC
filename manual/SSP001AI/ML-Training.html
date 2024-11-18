@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ML Examples</title>
+		<link type="text/css" rel="stylesheet" href="../../page.css" />
+	</head>
+
+<body>
+
+<!-- -->
+<h1>Training a Perceptron</h1>
+
+Create a Perceptron Object<br>
+Create a Training Function<br>
+Train the perceptron against correct answers<br>
+Training Task<br><br><br>
+Imagine a straight line in a space with scattered x y points.<br><br>
+
+Train a perceptron to classify the points over and under the line.<br>
+
+Click to Train Me<br>
+Create a Perceptron Object<br>
+Create a Perceptron object. Name it anything (like Perceptron).<br>
+
+Let the perceptron accept two parameters:<br>
+
+The number of inputs (no)<br>
+The learning rate (learningRate).<br>
+Set the default learning rate to 0.00001.<br>
+
+Then create random weights between -1 and 1 for each input.<br>
+
+Example
+<xmp>
+// Perceptron Object
+function Perceptron(no, learningRate = 0.00001) {
+
+// Set Initial Values
+this.learnc = learningRate;
+this.bias = 1;
+
+// Compute Random Weights
+this.weights = [];
+for (let i = 0; i <= no; i++) {
+  this.weights[i] = Math.random() * 2 - 1;
+}
+
+// End Perceptron Object
+}
+</xmp>
+The Random Weights<br>
+The Perceptron will start with a random weight for each input.
+
+The Learning Rate
+For each mistake, while training the Perceptron, the weights will be adjusted with a small fraction.
+
+This small fraction is the "Perceptron's learning rate".
+
+In the Perceptron object we call it learnc.
+
+The Bias
+Sometimes, if both inputs are zero, the perceptron might produce an incorrect output.
+
+To avoid this, we give the perceptron an extra input with the value of 1.
+
+This is called a bias.<br>
+
+Add an Activate Function<br>
+Remember the perceptron algorithm:<br>
+
+Multiply each input with the perceptron's weights
+Sum the results
+Compute the outcome<br>
+Example<br>
+<xmp>
+this.activate = function(inputs) {
+  let sum = 0;
+  for (let i = 0; i < inputs.length; i++) {
+    sum += inputs[i] * this.weights[i];
+  }
+  if (sum > 0) {return 1} else {return 0}
+}
+</xmp>
+The activation function will output:
+
+1 if the sum is greater than 0
+0 if the sum is less than 0
+Create a Training Function
+The training function guesses the outcome based on the activate function.
+
+Every time the guess is wrong, the perceptron should adjust the weights.
+
+After many guesses and adjustments, the weights will be correct.<br>
+
+Example
+<xmp>
+this.train = function(inputs, desired) {
+  inputs.push(this.bias);
+  let guess = this.activate(inputs);
+  let error = desired - guess;
+  if (error != 0) {
+    for (let i = 0; i < inputs.length; i++) {
+      this.weights[i] += this.learnc * error * inputs[i];
+    }
+  }
+}
+</xmp>
+Try it Yourself »<br>
+
+Backpropagation<br>
+After each guess, the perceptron calculates how wrong the guess was.
+
+If the guess is wrong, the perceptron adjusts the bias and the weights so that the guess will be a little bit more correct the next time.<br>
+
+This type of learning is called backpropagation.<br>
+
+After trying (a few thousand times) your perceptron will become quite good at guessing.<br>
+
+Create Your Own Library<br>
+Library Code:
+<xmp>
+// myperceptron.js Library
+// Perceptron Object ---------------------
+function Perceptron(no, learningRate = 0.00001) {
+
+// Set Initial Values
+this.learnc = learningRate;
+this.bias = 1;
+
+// Compute Random Weights
+this.weights = [];
+for (let i = 0; i <= no; i++) {
+  this.weights[i] = Math.random() * 2 - 1;
+}
+
+// Activate Function
+this.activate = function(inputs) {
+  let sum = 0;
+  for (let i = 0; i < inputs.length; i++) {
+    sum += inputs[i] * this.weights[i];
+  }
+  if (sum > 0) {return 1} else {return 0}
+}
+
+// Train Function
+this.train = function(inputs, desired) {
+  inputs.push(this.bias);
+  let guess = this.activate(inputs);
+  let error = desired - guess;
+  if (error != 0) {
+    for (let i = 0; i < inputs.length; i++) {
+      this.weights[i] += this.learnc * error * inputs[i];         
+    }
+  }
+}
+// End Perceptron Object ---------------------
+}
+</xmp>
+Now you can include the library in HTML:
+<xml>
+<script src="myperceptron.js"></script>
+</xml>
+Use Your Library<br>
+Example
+<xmp>
+<!DOCTYPE html>
+<html>
+<script src="myperceptron.js"></script>
+<script src="myplotlib.js"></script>
+<body>
+<canvas id="myCanvas" width="400px" height="400px" style="width:100%;max-width:400px;border:1px solid black"></canvas>
+
+<script>
+// Initiate Values
+const numPoints = 500;
+const learningRate = 0.00001;
+
+// Create a Plotter
+const plotter = new XYPlotter("myCanvas");
+plotter.transformXY();
+const xMax = plotter.xMax;
+const yMax = plotter.yMax;
+const xMin = plotter.xMin;
+const yMin = plotter.yMin;
+
+// Create Random XY Points
+const xPoints = [];
+const yPoints = [];
+for (let i = 0; i < numPoints; i++) {
+  xPoints[i] = Math.random() * xMax;
+  yPoints[i] = Math.random() * yMax;
+}
+
+// Line Function
+function f(x) {
+  return x * 1.2 + 50;
+}
+
+//Plot the Line
+plotter.plotLine(xMin, f(xMin), xMax, f(xMax), "black");
+
+// Compute Desired Answers
+const desired = [];
+for (let i = 0; i < numPoints; i++) {
+  desired[i] = 0;
+  if (yPoints[i] > f(xPoints[i])) {desired[i] = 1}
+}
+
+// Create a Perceptron
+const ptron = new Perceptron(2, learningRate);
+
+// Train the Perceptron
+for (let j = 0; j <= 10000; j++) {
+  for (let i = 0; i < numPoints; i++) {
+    ptron.train([xPoints[i], yPoints[i]], desired[i]);
+  }
+}
+
+// Display the Result
+for (let i = 0; i < numPoints; i++) {
+  const x = xPoints[i];
+  const y = yPoints[i];
+  let guess = ptron.activate([x, y, ptron.bias]);
+  let color = "black";
+  if (guess == 0) color = "blue";
+  plotter.plotPoint(x, y, color);
+}
+</script>
+</body>
+</html>
+</xmp>
+
+Live demo<br>
+<iframe src="ML-TrainingEg.html" style="position: relative;border: 0px;left: 0px;width: 100%;height: 500px;overflow: auto;"></iframe>
+<br><a href="ML-TrainingEg.html">View Example</a><br>
+<!-- -->
+
+
+</body>
+</html>
