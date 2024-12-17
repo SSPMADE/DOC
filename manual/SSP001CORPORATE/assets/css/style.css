@@ -1,0 +1,457 @@
+
+	.navbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 76px;
+	background-color: black;
+	z-index: 9999;
+	}
+	
+	
+	.containerin {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 92.7%;
+	height: 76px;
+	background-color: darkgoldenrod;
+	margin: auto;
+	}
+	.navbar-header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 76px;
+	background-color: #000000;
+	}
+	.navbar-togglebtn {
+	position: absolute;
+	float: right;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+	background-color: aliceblue;
+	z-index: 9999;
+	display: none;
+	padding: 0px;
+	}
+	.navbar-brand {
+	position: relative;
+	float: left;
+	padding: 10px;
+	top: 0px;
+	left: 0px;
+	width: 246px;
+	height: 76px;
+	background-color: #149898;
+	display: block;
+	text-decoration: none;
+	font-size: 30px;
+	font-style: italic;
+	color: aliceblue;
+	}
+
+	
+	
+	.navbar-collapseable {
+	position: absolute;
+	float: right;
+	top: 0px;
+	right: 0px;
+	min-width: 200px;
+	min-height: 76px;
+	background-color: transparent;
+	}
+	.navi-ul {
+	position: relative;
+	margin: 0px;
+	top: 0px;
+	left: 0px;
+	min-width: 198px;
+	height: 76px;
+	background-color: transparent;
+	padding: 0px;
+	}
+	.navi-ul li {
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 0px;
+	min-width: 80px;
+	height: 36px;
+	padding: 20px 9px 20px 9px;
+	margin: auto 2px;
+	background-color: black;
+	display: block;
+	}
+	.navi-ul li a {
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 0px;
+	text-decoration: none;
+	display: block;
+	font-size: 20px;
+	color: aliceblue;
+	background-color: transparent;
+	}
+	
+	
+	body {
+	margin: 0px;
+	}
+	.sspbody {
+	position: relative;
+	top: 70px;
+	left: 0px;
+	background-color: transparent;
+	width: 98.7%;
+	margin: auto;
+	}
+	.sectionssp {
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	}
+	.sectionssp .sspsect1img {
+	position: relative;
+	width: 100%;
+	}
+	.sectionssp .sectionsspOver {
+	position: absolute;
+	float: left;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #149898;
+	opacity: 90%;
+	text-align: center;
+	color: aliceblue;
+	}
+	.sectionsspOver, .sspsect1img {
+	height: 300px;
+	}
+	.sectioncolor {
+	background-color:  #2F2F2F;	
+	color: aliceblue;
+	}
+	
+	.ssprow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #2F2F2F;
+	}
+	.ssprow1 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #149898;
+	color: aliceblue;
+	}
+	.col-md-3 {
+	position: relative;
+	float: left;
+	left: 0px;
+	width: 23%;
+	height: 300px;
+	text-align: center;
+	align-content: center;
+	margin: 1%;
+	}
+	.col-md-3 img {
+	position: relative;
+	left: 0px;
+	width: 70px;
+	height: 70px;
+	padding: 4px;
+	background-color: aliceblue;
+	}
+	.col-md-4 {
+	position: relative;
+	float: left;
+	left: 0px;
+	width: 31.3%;
+	height: 300px;
+	text-align: center;
+	align-content: center;
+	margin: 1%;
+	color: azure;
+	}
+	
+	.col-md-4 a {
+	color: azure;
+	}
+	
+	
+	
+	a {
+	color: silver;
+	}
+
+	
+	
+	.icon-custom-1 {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-color: aliceblue;
+	padding: 5px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+	}
+	.mailrow {
+	position: relative;
+	}
+	.mailrow form {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	}
+	.xinput {
+	position: relative;
+	display: block;
+	width: 98%;
+	margin: 1%;
+	}
+	.submitinput {
+	position: relative;
+	display: block;
+	width: 150px;
+	}
+	.form-control {
+	position: relative;
+	display: block;
+	width: 98%;
+	margin: 1%;
+	}
+	
+	.sspsubsection {
+	position: relative;
+	float: left;
+	width: 32.2%;
+	margin: 0.5%;
+	padding: 0.5%;
+	}
+	
+	.sosialA {
+	position: relative;
+	text-decoration: none;
+	width: 58px;
+	height: 58px;
+	}
+	.sosialA img {
+	position: relative;
+	background-color: aliceblue;
+	width: 50px;
+	height: 50px;
+	padding: 4px;
+	}
+	.sosialA img:hover {
+	background-color: beige;
+	}
+	
+	
+	.hr-set {
+    border-top:2px solid #000;
+    max-width:250px;
+	}
+	.sspaboutImg{
+	position: relative;
+	float: right;
+	}
+	.sspqualityImg{
+	position: relative;
+	float: left;
+	}
+	.sspqualityImg, .sspaboutImg{
+	width: 25%;
+	height: auto;
+	margin: 5px;
+	}
+	.clearee
+	{
+	clear: both;
+	}
+	
+	
+	
+	
+	
+	
+	
+* {
+    box-sizing: border-box;
+}
+
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+	
+	
+
+
+	.sspfoot {
+	position: relative;
+	clear: both;
+	color: azure;
+	background-color: black;
+	text-align: center;
+	}
+	.sspfoot a {
+	color: azure;
+	text-decoration: none;
+	}
+
+
+	
+	
+@media (max-width: 767px) {
+
+	.containerin {
+	width: 100%;
+	}
+	.navbar-togglebtn {
+	display: block;
+	}
+	.navbar-collapseable {
+	position: absolute;
+	float: right;
+	top: 76px;
+	right: 0px;
+	width: 100%;
+	min-height: 76px;
+	background-color: transparent;
+	display: none;
+	}
+	.SSPresponsive {
+	display: block;
+	}
+	.navi-ul li {
+	position: relative;
+	float: none;
+	top: 0px;
+	left: 0px;
+	max-width: 100%;
+	height: 40px;
+	padding: 0px;
+	margin: 0px;
+	background-color: #00000;
+	border: 0px;
+	display: block;
+	}
+	.navi-ul li a {
+	position: relative;
+	display: block;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	background-color: transparent;
+	}
+	
+	
+	.sspaboutImg{
+	position: relative;
+	float: right;
+	}
+	.sspqualityImg{
+	position: relative;
+	float: left;
+	}
+	.sspqualityImg, .sspaboutImg{
+	width: 100%;
+	height: auto;
+	margin: 5px;
+	}
+	
+    .columns {
+        width: 100%;
+    }
+	
+	
+	
+	
+	
+	.col-md-3 {
+	position: relative;
+	left: 0px;
+	width: 98%;
+	height: 300px;
+	text-align: center;
+	align-content: center;
+	margin: 1%;
+	}
+	.col-md-4 {
+	position: relative;
+	float: left;
+	left: 0px;
+	width: 98%;
+	height: 300px;
+	text-align: center;
+	align-content: center;
+	margin: 1%;
+	color: azure;
+	}
+	.sspsubsection {
+	position: relative;
+	width: 98.2%;
+	margin: 0.5%;
+	padding: 0.5%;
+	}
+	.sosialA {
+	position: relative;
+	float: left;
+	clear: left;
+	}
+	
+	
+	
+}
