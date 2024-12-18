@@ -60,7 +60,6 @@ var list = {
 			[ "Introduction to Java Script", "manual/SSP001JS/Introduction-to-Java-Script" ]
 		],
 		"JS EXAMPLES": [
-			[ "Introduction to Java Script", "manual/SSP001JS/Introduction-to-Java-Script" ],
 			[ "Animated Search Form", "manual/SSP001JS/Animated-Search-Form" ],
 			[ "Accordion", "manual/SSP001JS/Accordion" ],
 			[ "Responsive Topnav", "manual/SSP001JS/Responsive-Topnav" ],
