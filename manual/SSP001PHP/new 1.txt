@@ -1,0 +1,44 @@
+
+    private $http_protocol;
+    private $page_url;
+    private $reference_url;
+    private $user_ip;
+    private $user_agent;
+    
+    function __construct(){
+        require_once('db-connect.php');
+        $this->db_conn = $conn;
+        $server_data = $_SERVER ?? "";
+        if(!empty($server_data)){
+            // Setting HTTP Protocol (https:// or http://)
+            $this->http_protocol = ((!empty($server_data['HTTPS']) && $server_data['HTTPS'] != 'off') || $server_data['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+            // Get Current URL
+            $this->page_url = $this->http_protocol . $server_data['HTTP_HOST'] . $server_data['REQUEST_URI'] . $server_data['QUERY_STRING'];
+
+            // Get Reference URL
+            $this->reference_url = !empty($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'/'; 
+            // User Agant
+            $this->user_agent = $server_data['HTTP_USER_AGENT'];
+
+            // Get User IP Address
+            $this->user_ip = $server_data['REMOTE_ADDR'];
+        }
+    }
+	
+	
+	
+	
+	
+	
+	
+$date = date("Y-m-d") ;
+$time = date("H:i:s") ;
+$ip = $_SERVER['REMOTE_ADDR'] ;
+$query_string = $_SERVER['QUERY_STRING'] ;
+$http_referer = isset( $_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "no referer" ;
+$http_user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "no User-agent" ;
+$web_page = $_SERVER['SCRIPT_NAME'] ;
+$isbot = is_Bot() ? '1' : '0' ;
+
+
