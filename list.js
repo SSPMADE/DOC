@@ -110,6 +110,9 @@ var list = {
 			[ "Drag And Drop", "manual/SSP001JS/Drag-And-Drop" ],
 			[ "Read xml online", "manual/SSP001JS/Read-xml-online" ],
 			[ "Read json online", "manual/SSP001JS/Read-json-online" ],
+
+			[ "XMLHttpRequest Object", "manual/SSP001JS/XMLHttpRequest-Object" ],
+
 			[ "Arrays", "manual/SSP001JS/Arrays" ],
 			[ "Execute win Apps", "manual/SSP001JS/Execute-win-Apps"],
 			[ "3d using threejs", "manual/SSP001JS/3d-using-threejs" ],
